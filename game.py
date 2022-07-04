@@ -6,10 +6,6 @@ class TicTacToe:
         self.board = [' ' for _ in range(9)]
         self.current_winner = None
 
-    # @staticmethod
-    # def make_board():
-    #     return 
-
     def print_board(self):
         for row in [self.board[i*3:(i+1)*3] for i in range(3)]:
             print('|'+'|'.join(row)+'|')
@@ -57,11 +53,11 @@ class TicTacToe:
         if square % 2 == 0:
             diagonal1 = [self.board[i] for i in [0, 4, 8]]
             # print('diag1', diagonal1)
-            if all([s == letter for s in diagonal1]):
+            if all([spot == letter for spot in diagonal1]):
                 return True
             diagonal2 = [self.board[i] for i in [2, 4, 6]]
             # print('diag2', diagonal2)
-            if all([s == letter for s in diagonal2]):
+            if all([spot == letter for spot in diagonal2]):
                 return True
         return False
 
